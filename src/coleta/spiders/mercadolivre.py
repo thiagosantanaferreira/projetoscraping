@@ -28,7 +28,7 @@ class MercadolivreSpider(scrapy.Spider):
                 'reviewa_amount': product.css('span.ui-search-reviews__amount::text').get()
             }
             
-        if self.oage_count < self.max_page:
+        if self.page_count < self.page_max:
              next_page = response.css('li.andes-pagination__button.andes-pagination__button--next a::attr(href)').get()
              if next_page:
                  self.page_count += 1
